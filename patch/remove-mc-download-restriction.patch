@@ -1,0 +1,37 @@
+diff --git a/Plain Craft Launcher 2/FormMain.xaml.vb b/Plain Craft Launcher 2/FormMain.xaml.vb
+index d35da3a..9398014 100644
+--- a/Plain Craft Launcher 2/FormMain.xaml.vb	
++++ b/Plain Craft Launcher 2/FormMain.xaml.vb	
+@@ -11,9 +11,6 @@ Public Class FormMain
+         Dim FeatureList As New List(Of KeyValuePair(Of Integer, String))
+         '统计更新日志条目
+         If BuildType = BuildTypes.Release Then
+-            If LastVersion < 413 Then 'Release 2.99.0.0
+-                FeatureList.Add(New KeyValuePair(Of Integer, String)(5, "删除：为遵守相关法律法规，PCL 暂时不再提供 MC 下载功能，非常抱歉 qwq……"))
+-            End If
+             If LastVersion < 411 Then 'Release 2.14.0.0
+                 FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "新增：允许修改、添加、移除、更新已安装版本的各个组件，可从版本设置中进入"))
+                 FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化：启动游戏时允许按 Esc 取消"))
+@@ -103,9 +100,6 @@ Public Class FormMain
+             '3：BUG+ IMP* FEAT-
+             '2：BUG* IMP-
+             '1：BUG-
+-            If LastVersion < 414 Then 'Snapshot 2.99.0.0
+-                FeatureList.Add(New KeyValuePair(Of Integer, String)(5, "删除：为遵守相关法律法规，PCL 暂时不再提供 MC 下载功能，非常抱歉 qwq……"))
+-            End If
+             If LastVersion < 412 Then 'Snapshot 2.14.0.0
+                 FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "新增：允许修改、添加、移除、更新已安装版本的各个组件，可从版本设置中进入"))
+                 FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化：启动游戏时允许按 Esc 取消"))
+diff --git a/Plain Craft Launcher 2/Modules/ModSecret.vb b/Plain Craft Launcher 2/Modules/ModSecret.vb
+index a8032f2..44f72ba 100644
+--- a/Plain Craft Launcher 2/Modules/ModSecret.vb	
++++ b/Plain Craft Launcher 2/Modules/ModSecret.vb	
+@@ -15,7 +15,7 @@ Friend Module ModSecret
+ 
+ #Region "网络鉴权"
+ 
+-    Public Const RestrictMcDownload As Boolean = True
++    Public Const RestrictMcDownload As Boolean = False
+     Friend Function SecretCdnSign(UrlWithMark As String) As String
+         If Not UrlWithMark.EndsWithF("{CDN}") Then Return UrlWithMark
+         Return UrlWithMark.Replace("{CDN}", "").Replace(" ", "%20")

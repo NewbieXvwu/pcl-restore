@@ -1,0 +1,12 @@
+# build output
+bin/
+obj/
+
+# patched launchers must never be committed (we only ship the tool)
+*.restored.exe
+
+# editors / OS
+.vs/
+.idea/
+*.user
+.DS_Store

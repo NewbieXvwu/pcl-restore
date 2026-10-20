@@ -1,0 +1,7 @@
+# Keep Windows batch files CRLF so they run correctly on Windows.
+*.bat text eol=crlf
+# Texts printed by `type` on Windows must also be CRLF.
+LICENCE text eol=crlf
+*.txt text eol=crlf
+# Shell scripts stay LF.
+*.sh text eol=lf

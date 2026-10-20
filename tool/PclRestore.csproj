@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>PclRestore</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <AssemblyTitle>PCL Restore - lift the Minecraft-download restriction</AssemblyTitle>
+    <Description>Replayable IL patcher that removes the Minecraft-download restriction from the Plain Craft Launcher 2 EXE.</Description>
+    <RootNamespace>PclRestore</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- dnlib is pulled from NuGet so the repo stays source-only (no committed binary).
+         On Windows, `dotnet build` will restore it automatically (needs one-time internet). -->
+    <PackageReference Include="dnlib" Version="4.4.0" />
+  </ItemGroup>
+
+</Project>
